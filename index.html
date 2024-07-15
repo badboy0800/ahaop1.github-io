@@ -4,87 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AHAOP検索エンジン</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            color: white;
-            background: linear-gradient(135deg, #3382E6, #F5A85A);
-        }
-        .container {
-            text-align: center;
-            margin-top: 330px;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            width: 500px;
-            padding: 15px;
-            font-size: 1em;
-            border: none;
-            border-radius: 5px;
-            margin-right: -30px;
-        }
-        input[type="submit"] {
-            font-size: 1em;
-            border: none;
-            border-radius: 5px;
-            background: url(./logo.png) no-repeat center center;
-            background-size: cover;
-            color: white;
-            cursor: pointer;
-            position: relative;
-            left: 30px;
-            height: 50px;
-            width: 60px;
-        }
-        input[type="submit"]:hover {
-            background-color: #655bc7;
-        }
-        header{
-            position: absolute;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        header .logo{
-            font-size: 1.5em;
-            font-weight: bold;
-            position: absolute;
-            left: 60px;
-        }
-        header nav{
-            margin: 0 auto;
-        }
-        header nav ul{
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 40px;
-        }
-        header nav ul li{
-            display: inline;
-        }
-        header nav ul li a{
-            text-decoration: none;
-            color: white;
-            font-size: 1em;
-        }
-        .login{
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-    </style>
+     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
+    
     <header>
         <div class="logo">AHAOP</div>
         <nav>
@@ -100,9 +24,96 @@
     <div class="container">
         <h1>AHAOP 検索エンジン</h1>
         <form action="/search" method="GET">
-            <input type="text" name="query" placeholder="商品を検索" required>
+            <input type="text" name="query" placeholder="商品を検索" required id="search-input">
             <input type="submit" value="">
+            <div class="search-suggestions" id="search-suggestions">
+            <ul>
+                <li style="font-weight:bold;"><img src="g.png">&nbsp;&nbsp;ワニ財布</li>
+                <li>シューズ</li>
+                <li>モバイル</li>
+                <li>バッグ</li>
+                <li>紳士服</li>
+                <li>書籍</li>
+            </ul>
+        </div>
         </form>
     </div>
+        <div class="main">
+        <div id="guang" class="guang">
+            
+        </div>
+    <div class="title">おすすめ商品</div>
+    <div class="content">
+        <div class="left">
+            <ul>
+                <li><a href="">モバイル/デジタル</a></li>
+                <li><a href="">家具/室内装飾品/ランプ</a></li>
+                <li><a href="">下着/紳士服/婦人服/子供服</a></li>
+                <li><a href="">バッグ/時計/ジュエリー</a></li>
+                <li><a href="">スポーツ/シューズ</a></li>
+                <li><a href="">カー用品・カー電化製品</a></li>
+                <li><a href="">おもちゃ楽器・ペットライフ</a></li>
+                <li><a href="">書籍/文学</a></li>
+            </ul>
+        </div>
+        <div class="ranking">
+            <div class="ranking-items">
+                <div class="item" id="item1">
+                    <a href="https://snkrdunk.com/products/DZ4137-106">
+                        <img src="1.jpg" alt="Product 1">
+                        <div class="name"><a href="">エアジョーダン1</a></div>
+                    </a>
+                    
+                </div>
+                <div class="item" id="item2">
+                    <a href="https://www.amazon.co.jp/-/en/Apple-iPhone-Natural-Titanium-Compatible/dp/B0CMWMP9J8/ref=sr_1_10?crid=39CLKI85289OK&dib=eyJ2IjoiMSJ9.51KqMot7NHmb8xD4GU4M_VUtZcuAxQJqdyj7_aeQV4IjHFdqbTVeK7JmxLnorHUhCU0wUeLclaDc_VEyi5ARo-1Dwuhka9oxPz6YomxNHv-qE7rWGg-SdBeqJ5AIQCOCatibRAiVxcnffnMYojPckrNlXWkdKoFQmjTzJ0L5jVniLKeDDU4z0pLei1dzeSjcBgFMg_0bZ8HpLsViWyuVHK3lvgvoHBZ2UGMRJzrlC-BQ1uULpk5K0D26Jvxjm3qKwb9xcZR-KtC3_aB8jeojL0nY4F4BsbVo1y6t3F9P6F8.Jie4Y6c-43bmY-OTjY0Wt6AD7ayaGDDqIiss9rKzkes&dib_tag=se&keywords=iphone15&qid=1721060503&sprefix=iphone15%2Caps%2C161&sr=8-10">
+                        <img src="2.jpg" alt="Product 2">
+                        <div class="name"><a href="">IPHONE15 pro</a></div>
+                    </a>
+                </div>
+                <div class="item" id="item3">
+                    <a href="https://www.amazon.co.jp/-/en/MWRG3J-A/dp/B0D3J8CL3C/ref=sr_1_9?crid=2ON0DVMCC435A&dib=eyJ2IjoiMSJ9.myEbcvDrKAPgbAFTpYGmre1KysETQbP5vrsJbdZe6bbgvnpv5hWx4-Dzqvy_09DAwDdfohMA8DUBU4buHFXPohIeJgCvNQNvw8sPwk_D4F2HCXX-dvLXUZV-1Zdl_BrxSXktC_pKReVMNINnCEjQEShdp2GTRCRptyGzNOlgiqGb9B156yI1cFEPiKNzXVwLld4mZlhTZPs21Jtdw4a5-Ym92VU4rTaKu1ysOHT26Eydi0hFNY1wh3AKQnTl5Hkq0KbpCF2hzbJo4cBfN_oeXNiy4DixnS1hZ-Y6dGXW5HQ.456HrKMmwqoNKH0bISR1KECODuWsp2qXPuRy3_oAow4&dib_tag=se&keywords=ipad+2024&qid=1721059907&sprefix=ipad+2024%2Caps%2C171&sr=8-9">
+                        <img src="3.jpg" alt="Product 3">
+                        <div class="name"><a href="">IPAD 2024</a></div>
+                    </a>
+                </div>
+                <div class="item" id="item4">
+                    <a href="https://stockx.com/ja-jp/bape-1st-camo-shark-full-zip-hoodie-fw18-green?country=JP&currencyCode=JPY&size=XXXL">
+                        <img src="4.jpg" alt="Product 4">
+                        <div class="name"><a href="">ベープジャケット</a></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="selection">
+            <div class="ranking-items">
+                <div class="item">
+                    <a href="https://www.balenciaga.com/ja-jp/montaigne-t%E3%82%B7%E3%83%A3%E3%83%84-%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E6%9D%A2%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF-787349TRVN31048.html">
+                    <img src="5.jpg" alt="Product 1">
+                    <div class="name"><a href="">バレンシアガ Tシャツ</a></div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://shop.adidas.jp/products/IM9419/">
+                    <img src="6.jpg" alt="Product 2">
+                    <div class="name"><a href="">アディダス スウェットパンツ</a></div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://www.viviennewestwood-tokyo.com/disp/CSfDispListPage_001.jsp?s=01">
+                    <img src="7.jpg" alt="Product 3">
+                    <div class="name"><a href="">ウェストクイーンマザー</a></div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://jp.mcmworldwide.com/ja_JP/%E3%82%A6%E3%82%A3%E3%83%A1%E3%83%B3%E3%82%BA/%E3%83%90%E3%83%83%E3%82%B0/%E3%83%90%E3%83%83%E3%82%B0%E4%B8%80%E8%A6%A7/stark-%E3%81%B9%E3%81%B9%E3%83%96%E3%83%BC-%E3%82%B5%E3%82%A4%E3%83%89%E3%82%B9%E3%82%BF%E3%83%83%E3%82%BA%E4%BB%98-%E3%83%B4%E3%82%A3%E3%82%BB%E3%83%88%E3%82%B9-%E3%83%90%E3%83%83%E3%82%AF%E3%83%91%E3%83%83%E3%82%AF/MMK6SVE92CO001.html?cgid=women-all-bags&sz=120&start=0">
+                    <img src="8.jpg" alt="Product 4">
+                    <div class="name"><a href="">MCM バックパック</a></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
 </body>
 </html>
